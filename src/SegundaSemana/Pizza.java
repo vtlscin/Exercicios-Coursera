@@ -1,6 +1,7 @@
 package SegundaSemana;
 
 import java.util.HashMap;
+import java.util.Set;
 
 public class Pizza {
 
@@ -24,18 +25,20 @@ public class Pizza {
 	
 	public static void contabilizaIngrediente(String ingrediente){
 		
-		int qtdIngrediente = 0;
+		int qtdIngrediente = 1;
 		
 		if(ingredientes.containsKey(ingrediente)){
 			qtdIngrediente = ingredientes.get(ingrediente);
-			ingredientes.put(ingrediente, qtdIngrediente++);
+			ingredientes.put(ingrediente, ++qtdIngrediente);
 		}else{
 			ingredientes.put(ingrediente, qtdIngrediente);
 		}
 		
+		ingredientes.get(ingrediente);
+		
 	}
 	
-	public static HashMap<String, Integer> getIngredientes() {
+	public HashMap<String, Integer> getIngredientes() {
 		return ingredientes;
 	}
 
@@ -43,4 +46,10 @@ public class Pizza {
 		Pizza.ingredientes = ingredientes;
 	}
 	
+	public void qtdIngredientes(){
+		Set<String> chaves = ingredientes.keySet();
+		for (String chave : chaves){
+			System.out.println("ingrediente: " + chave + ", quantidade: " + ingredientes.get(chave));
+		}
+	}
 }
