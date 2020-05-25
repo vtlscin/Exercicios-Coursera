@@ -13,10 +13,15 @@ public class Principal {
 		p1.adicionaIngrediente("Queijo");
 		p2.adicionaIngrediente("Frango");
 		p3.adicionaIngrediente("Calabresa");
-		
+
 		carrinho.calculaValor(p1,p2,p3);
 		
+		//p1.qtdIngredientes();
+		
+		Pizza.zeraIngredientes();
+		
 		p1.qtdIngredientes();
+		
 	}
 
 }
