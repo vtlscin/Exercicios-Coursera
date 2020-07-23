@@ -39,4 +39,37 @@ public class Pessoa {
 
 	}
 	
+	public String getSigno(){
+		convertDateToCalendar();
+		int mes = nascimento.get(Calendar.MONTH) + 1;
+		int dia = nascimento.get(Calendar.DAY_OF_MONTH);
+		switch (mes) {
+		case 1:
+			return dia >= 21 ? "Aquário" : "Capricórnio";
+		case 2:
+			return dia >= 20 ? "Peixes" : "Aquário";
+		case 3:
+			return dia >= 21 ? "Peixes" : "Áries";
+		case 4:
+			return dia >= 21 ? "Touro" : "Áries";
+		case 5:
+			return dia >= 21 ? "Gêmeos" : "Touro";
+		case 6:
+			return dia >= 21 ? "Câncer" : "Gêmeos";
+		case 7:
+			return dia >= 22 ? "Leão" : "Câncer";
+		case 8:
+			return dia >= 23 ? "Virgem" : "Leão";
+		case 9:
+			return dia >= 23 ? "Libra" : "Virgem";
+		case 10:
+			return dia >= 23 ? "Escorpião" : "Libra";
+		case 11:
+			return dia >= 22 ? "Sagitário" : "Escorpião";
+		default:
+			return dia >= 22 ? "Capricórnio" : "Sagitário";
+		}
+		
+	}
+	
 }
